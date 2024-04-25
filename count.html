@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            padding: 5px 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Word Counter</h1>
+<table>
+    <tr>
+        <th>Word</th>
+        <th>Count</th>
+        <th>Action</th>
+    </tr>
+    <tr>
+        <td id="word1">Word 1</td>
+        <td id="count1">0</td>
+        <td><button onclick="incrementCount('word1')">+1</button></td>
+    </tr>
+    <tr>
+        <td id="word2">Word 2</td>
+        <td id="count2">0</td>
+        <td><button onclick="incrementCount('word2')">+1</button></td>
+    </tr>
+    <tr>
+        <td id="word3">Word 3</td>
+        <td id="count3">0</td>
+        <td><button onclick="incrementCount('word3')">+1</button></td>
+    </tr>
+    <!-- Add more rows for additional words -->
+</table>
+
+<script>
+        function incrementCount(wordId) {
+            var countElement = document.getElementById('count' + wordId.slice(-1));
+            var count = parseInt(countElement.innerText);
+            countElement.innerText = count + 1;
+        }
+    </script>
+</body>
+</html>
